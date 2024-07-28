@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.springcore.collection.Employee" name="employee1">
+		<property name="name" value="jivan" />
+		<property name="phones">
+			<list>
+				<value>1264764287</value>
+				<value>2375774778</value>
+				<value>3475634785</value>
+			</list>
+		</property>
+		<property name="Address">
+			<set>
+				<value>delhi</value>
+				<value>pune</value>
+				<value>mumbai</value>
+			</set>
+		</property>
+		<property name="coureses">
+			<map>
+				<entry key="java" value="100/"/>
+				<entry key="spring" value="500"/>
+				<entry key="python" value="1000"/>
+			</map>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/util 
+	http://www.springframework.org/schema/util/spring-util.xsd
+	">
+	<!-- Stand-alone List -->
+	<util:list list-class="java.util.LinkedList"
+		id="mybestfriends">
+		<value>jivan</value>
+		<value>harshal</value>
+		<value>samarjeet</value>
+	</util:list>
+	
+	<!-- Stand-alone Map -->
+	<util:map map-class="java.util.HashMap"
+	id="fees">
+	<entry key="school" value="1000"/>
+	<entry key="tution" value="2000"/>
+	<entry key="course" value="8000"/>
+	</util:map>
+	
+	<!-- Stand-alone Properties --> 
+	<!-- It does not required class because it is parent of Hashmap -->
+	<util:properties id="prop" >
+	<prop key="driver">com.mysql.jdbc.driver</prop>
+	<prop key="username">Jivan</prop>
+	</util:properties>
+	
+	<bean class="com.springcore.standalone.collection.Person"
+		name="person1">
+		<property name="friends" ref ="mybestfriends"/>
+		<property name="feestructure" ref ="fees"/>
+		<property name="properties" ref ="prop"/>
+	</bean>
+</beans>
